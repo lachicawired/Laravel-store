@@ -3,12 +3,25 @@
 **TEAM6** es una plataforma web desarrollada en **Laravel** que conecta a coleccionistas de México con artículos exclusivos del extranjero.  
 El sistema incluye gestión de productos, carrito de compras, autenticación de usuarios, panel de administrador y un sistema de encargos personalizados (*Custom Orders*).
 
+[![image-2025-11-12-195547149.png](https://i.postimg.cc/NG4X3kdp/image-2025-11-12-195547149.png)](https://postimg.cc/c6v6Ywyn)
+[![image-2025-11-12-195838494.png](https://i.postimg.cc/2SvSDzCP/image-2025-11-12-195838494.png)](https://postimg.cc/tsqjdGZ5)
+[![image-2025-11-12-195945909.png](https://i.postimg.cc/43PZfyqP/image-2025-11-12-195945909.png)](https://postimg.cc/4KYjwfJH)
+[![image-2025-11-12-200032996.png](https://i.postimg.cc/hPmBJpND/image-2025-11-12-200032996.png)](https://postimg.cc/QHjPwkXw)
+[![image-2025-11-12-200141621.png](https://i.postimg.cc/13P3sk4g/image-2025-11-12-200141621.png)](https://postimg.cc/RNsBTb79)
+[![image-2025-11-12-200231421.png](https://i.postimg.cc/rsxqLjkr/image-2025-11-12-200231421.png)](https://postimg.cc/4HfD6znf)
+[![image-2025-11-12-200325403.png](https://i.postimg.cc/FHDNm123/image-2025-11-12-200325403.png)](https://postimg.cc/pmhgJVVL)
+<img width="3093" height="1608" alt="image" src="https://github.com/user-attachments/assets/a32d4163-ff55-46b9-a7c7-50f2facd5799" />
+<img width="3083" height="1595" alt="image" src="https://github.com/user-attachments/assets/507f3d66-22ab-4ed9-8d52-4d053b6b1909" />
+
+
+
+
 ---
 
 ## 🚀 Características
 
 - 🛍️ **Catálogo de productos** con imágenes, precios y descripciones.
-- 🧾 **Carrito de compras** con persistencia en sesión.
+- 🧾 **Carrito de compras y sistema de stock** con persistencia en sesión.
 - 🔐 **Autenticación de usuarios** (registro e inicio de sesión con roles).
 - 🧑‍💼 **Panel de administración** para gestionar productos, usuarios y pedidos.
 - 📦 **Sistema de encargos personalizados** donde los usuarios pueden solicitar artículos específicos.
@@ -21,6 +34,8 @@ El sistema incluye gestión de productos, carrito de compras, autenticación de 
 
 ### 1️⃣ Clona el repositorio
 ```bash
+
+
 git clone https://github.com/tuusuario/team6.git
 cd team6
 
