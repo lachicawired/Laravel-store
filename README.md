@@ -1,33 +1,89 @@
-## Running the Project with Docker
+# 🕹️ TEAM6 - Tienda de Coleccionismo Premium
 
-This project includes Docker configuration files to simplify setup and deployment. Please note that the provided `docker-compose.yaml` is currently a template and does not define any services. To run the project using Docker Compose, you will need to:
+**TEAM6** es una plataforma web desarrollada en **Laravel** que conecta a coleccionistas de México con artículos exclusivos del extranjero.  
+El sistema incluye gestión de productos, carrito de compras, autenticación de usuarios, panel de administrador y un sistema de encargos personalizados (*Custom Orders*).
 
-1. **Add Service Definitions:**
-   - Update `docker-compose.yaml` with the necessary services, specifying build contexts, ports, and environment variables as required by your application.
-   - Example:
-     ```yaml
-     services:
-       app:
-         build:
-           context: ./app
-         ports:
-           - "8000:8000"
-         env_file: .env
-     ```
+---
 
-2. **Environment Variables:**
-   - If your application requires environment variables, create a `.env` file in the project root and reference it in the compose file using `env_file: .env`.
+## 🚀 Características
 
-3. **Build and Run:**
-   - Once your services are defined, build and start the containers:
-     ```sh
-     docker compose up --build
-     ```
+- 🛍️ **Catálogo de productos** con imágenes, precios y descripciones.
+- 🧾 **Carrito de compras** con persistencia en sesión.
+- 🔐 **Autenticación de usuarios** (registro e inicio de sesión con roles).
+- 🧑‍💼 **Panel de administración** para gestionar productos, usuarios y pedidos.
+- 📦 **Sistema de encargos personalizados** donde los usuarios pueden solicitar artículos específicos.
+- 📸 Vista de administrador para ver los encargos con imágenes, precios y país de origen.
+- 🧠 Desarrollado con **Laravel 10** y **Bootstrap 5**.
 
-4. **Ports:**
-   - Exposed ports should be specified in the `ports` section of each service in `docker-compose.yaml`.
+---
 
-5. **Special Configuration:**
-   - If your services depend on external resources (e.g., databases, caches), define them as additional services in the compose file and use `depends_on` as needed.
+## ⚙️ Instalación y Configuración
 
-Refer to the example template in `docker-compose.yaml` for guidance on service configuration. Update the compose file with your project's specific requirements to enable Docker-based development and deployment.
+### 1️⃣ Clona el repositorio
+```bash
+git clone https://github.com/tuusuario/team6.git
+cd team6
+
+
+3️⃣ Instala dependencias de JavaScript
+npm install && npm run build
+
+4️⃣ Crea tu archivo .env
+
+Copia el archivo de ejemplo y configura tus variables:
+
+cp .env.example .env
+
+
+Abre .env y actualiza:
+
+APP_NAME=TEAM6
+APP_URL=http://localhost
+DB_DATABASE=team6
+DB_USERNAME=root
+DB_PASSWORD= (tu contraseña)
+
+
+Luego genera la clave de aplicación:
+
+php artisan key:generate
+
+5️⃣ Ejecuta las migraciones
+php artisan migrate
+
+
+(Opcional) Población de datos de prueba:
+
+php artisan db:seed
+
+6️⃣ Inicia el servidor local
+php artisan serve
+
+
+Abre en tu navegador:
+
+http://localhost:8000
+
+🧩 Estructura principal
+app/
+ ├── Http/
+ │   ├── Controllers/
+ │   │   ├── ProductController.php
+ │   │   ├── CartController.php
+ │   │   ├── AdminController.php
+ │   │   └── CustomOrderController.php
+ │   └── Middleware/
+ ├── Models/
+ │   ├── Product.php
+ │   ├── Order.php
+ │   ├── User.php
+ │   └── CustomOrder.php
+resources/
+ ├── views/
+ │   ├── layouts/app.blade.php
+ │   ├── products/index.blade.php
+ │   ├── custom-orders/create.blade.php
+ │   ├── admin/custom-orders.blade.php
+ │   └── about.blade.php
+routes/
+ └── web.php
