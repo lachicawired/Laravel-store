@@ -4,15 +4,35 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomOrderController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
 | Rutas Públicas
 |--------------------------------------------------------------------------
 */
+Route::get('/encargo', [CustomOrderController::class, 'create'])->name('custom-order.form');
+Route::post('/encargo', [CustomOrderController::class, 'store'])->name('custom-order.store');
+
+// Solo el admin puede ver las peticiones
+Route::middleware(['auth', 'admin'])->group(function() {
+    Route::get('/admin/encargos', [CustomOrderController::class, 'index'])->name('admin.custom-orders');
+});
+// Lo de los perfiles
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+});
+
 
 // Página principal de productos
 Route::get('/', [ProductController::class, 'index'])->name('products');
+Route::view('/about', 'about')->name('about');
+
 
 // Carrito (solo para usuarios autenticados)
 Route::middleware(['auth'])->group(function() {

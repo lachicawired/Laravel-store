@@ -57,4 +57,9 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+	public function show(Request $request)
+    {
+        $user = $request->user();
+        return view('profile.show', compact('user'));
+    }
 }

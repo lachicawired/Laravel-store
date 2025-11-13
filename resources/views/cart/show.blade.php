@@ -6,6 +6,7 @@
 </head>
 <body class="p-4">
 
+
     <a href="{{ url('/') }}" class="btn btn-secondary mb-3">← Seguir comprando</a>
 
     <h1 class="mb-4">🛍️ Carrito de Compras</h1>

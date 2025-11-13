@@ -62,10 +62,21 @@ class AdminController extends Controller
         $order->save();
         return redirect()->back()->with('success', 'Estado actualizado.');
     }
-	public function users() {
-    $users = \App\Models\User::all();
-    return view('admin.users', compact('users'));
-}
+	public function users(Request $request)
+    {
+        // Obtener el término de búsqueda (si existe)
+        $search = $request->input('search');
+
+        // Filtrar por ID o nombre
+        $users = User::query()
+            ->when($search, function ($query, $search) {
+                $query->where('id', $search)
+                      ->orWhere('name', 'like', "%{$search}%");
+            })
+            ->get();
+
+        return view('admin.users', compact('users', 'search'));
+    }
 public function makeAdmin($id)
 {
     $user = \App\Models\User::findOrFail($id);
