@@ -87,3 +87,4 @@ resources/
  │   └── about.blade.php
 routes/
  └── web.php
+[![image-2025-11-12-195547149.png](https://i.postimg.cc/NG4X3kdp/image-2025-11-12-195547149.png)](https://postimg.cc/c6v6Ywyn)
